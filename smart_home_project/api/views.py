@@ -1,7 +1,7 @@
 from django.shortcuts import render
 from rest_framework import viewsets
-from ..sensors.models import Sensor
-from ..core.models import Device
+from sensors.models import Sensor
+from core.models import Device
 from .serializers import SensorSerializer, DeviceSerializer
 
 # Create your views here.

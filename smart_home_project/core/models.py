@@ -1,5 +1,5 @@
 from django.db import models
-from ..sensors.models import Sensor
+from sensors.models import Sensor
 
 # Create your models here.
 
@@ -24,4 +24,4 @@ class Rule(models.Model):
     device = models.ForeignKey(Device, on_delete=models.CASCADE)
     status = models.FloatField()
     sensor = models.ForeignKey(Sensor, on_delete=models.CASCADE)
-    value = models.FloatField()
+    value = models.CharField(max_length=100)

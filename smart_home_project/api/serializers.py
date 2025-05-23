@@ -1,6 +1,6 @@
 from rest_framework import serializers
-from ..sensors.models import Sensor
-from ..core.models import Device
+from sensors.models import Sensor
+from core.models import Device
 
 
 class SensorSerializer(serializers.ModelSerializer):

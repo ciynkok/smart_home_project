@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+{% load static %}
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Главная</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'core/style.css' %}">
+</head>
+<body>
+<div class="container">
+  <div class="card">
+       <table id="table_sensors">
+        <thead>
+        <tr>
+            <th>Название сенсора</th>
+            <th>Тип</th>
+            <th>Текущий показатель</th>
+        </tr>
+        </thead>
+        <tbody>
+        {% for s in object_list %}
+        <tr>
+            <td>{{ s.name }}</td>
+            <td>{{ s.sensor_type }}</td>
+            <td>{{ s.value }}</td>
+        </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+      <table id="table_devices">
+        <thead>
+        <tr>
+            <th>Название девайса</th>
+            <th>Тип</th>
+            <th>Статус</th>
+        </tr>
+        </thead>
+        <tbody>
+        {% for d in devices %}
+        <tr>
+            <td>{{ d.name }}</td>
+            <td>{{ d.type }}</td>
+            <td>{{ d.status }}</td>
+        </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+  </div>
+</div>
+<script src="{% static 'core/home.js' %}"></script>
+</body>
+</html>
